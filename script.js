@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         orderForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
+alert("FORM WORKING");
+
             // Get form values
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
