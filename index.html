@@ -682,11 +682,25 @@
             const encodedMessage = encodeURIComponent(whatsappMessage);
             const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
 
-            // Open WhatsApp
-            window.open(whatsappUrl, '_blank');
-
-            // Reset form
-            orderForm.reset();
+            fetch("https://script.google.com/macros/s/AKfycbyQNiU1TMJPYmPZrqYKS_Rf11AALDeHQEoZTucf7Pn0B4yIlI2OTFdhjslRAjWbq7L5/exec", {
+    method: "POST",
+    body: JSON.stringify({
+        name: name,
+        email: email,
+        phone: phone,
+        address: neighborhood,
+        city: city,
+        notes: message
+    }),
+    mode: "no-cors"
+})
+.then(() => {
+    window.open(whatsappUrl, '_blank');
+    orderForm.reset();
+})
+.catch(err => {
+    console.error(err);
+});
         });
 
         // Smooth scroll for navigation links
