@@ -4,26 +4,504 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AYADY BY O - وسائد فاخرة مصنوعة بحب</title>
-    <meta name="description" content="وسائد فاخرة مصنوعة بحرفية عالية. توصيل مجاني في جميع أنحاء المغرب.">
+    <meta name="description" content="وسائد فاخرة مصنوعة بحرفية عالية. توصيل  في جميع أنحاء المغرب. السعر: 179 درهم">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lora:wght@400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="./photo/logo.png">
+    <link rel="icon" type="image/x-icon" href="./photos/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            direction: rtl;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: #F5F1ED;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo-img {
+            height: 3rem;
+            width: 3rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            color: #D4A574;
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #A89080;
+            margin: 0;
+        }
+
+        nav {
+            display: none;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+            }
+        }
+
+        nav a {
+            font-size: 0.875rem;
+            color: #2C2C2C;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #D4A574;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 4rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 6rem 0;
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .hero-text {
+            order: 2;
+        }
+
+        @media (min-width: 768px) {
+            .hero-text {
+                order: 1;
+            }
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero h2 {
+                font-size: 3rem;
+            }
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #A89080;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefits {
+            space-y: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .benefit-item span:first-child {
+            color: #D4A574;
+            font-size: 1.25rem;
+        }
+
+        .price-box {
+            display: inline-block;
+            background-color: rgba(212, 165, 116, 0.1);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .price-box p:first-child {
+            font-size: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: #D4A574;
+            margin-bottom: 0.25rem;
+        }
+
+        .price-box p:last-child {
+            font-size: 0.75rem;
+            color: #A89080;
+        }
+
+        .hero-image {
+            order: 1;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .hero-image {
+                order: 2;
+            }
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .hero-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom right, rgba(212, 165, 116, 0.05), transparent);
+            border-radius: 1.5rem;
+            filter: blur(3rem);
+        }
+
+        .hero-image-wrapper img {
+            position: relative;
+            width: 100%;
+            height: auto;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 4rem 0;
+            background-color: #FFFFFF;
+        }
+
+        @media (min-width: 768px) {
+            .features {
+                padding: 6rem 0;
+            }
+        }
+
+        .features h2 {
+            font-size: 1.875rem;
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        @media (min-width: 768px) {
+            .features h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            height: 4rem;
+            width: 4rem;
+            margin: 0 auto 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            font-size: 0.875rem;
+            color: #A89080;
+            line-height: 1.6;
+        }
+
+        /* Order Form Section */
+        .order-section {
+            padding: 4rem 0;
+            background: linear-gradient(to bottom, #F5F1ED, #FFFFFF);
+        }
+
+        @media (min-width: 768px) {
+            .order-section {
+                padding: 6rem 0;
+            }
+        }
+
+        .order-container {
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        .order-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .order-header h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .order-header h2 {
+                font-size: 2.25rem;
+            }
+        }
+
+        .order-header p {
+            color: #A89080;
+        }
+
+        .form-wrapper {
+            background-color: #FFFFFF;
+            padding: 2rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #F5F1ED;
+            border: 1px solid #E8E4E0;
+            border-radius: 0.5rem;
+            font-family: 'Lora', serif;
+            text-align: right;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #D4A574;
+        }
+
+        .form-group textarea {
+            min-height: 6rem;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.5rem;
+            background-color: #D4A574;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 0.5rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: #C49564;
+            box-shadow: 0 10px 20px rgba(212, 165, 116, 0.2);
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        .form-note {
+            font-size: 0.75rem;
+            text-align: center;
+            color: #A89080;
+            margin-top: 1rem;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 3rem 0;
+            background-color: #FFFFFF;
+            border-top: 1px solid #E8E4E0;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .info-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .info-item {
+            space-y: 0.5rem;
+        }
+
+        .info-item h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-item p {
+            font-size: 0.875rem;
+            color: #A89080;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2C2C2C;
+            color: #FFFFFF;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.875rem;
+        }
+
+        /* Animations */
+        @media (prefers-reduced-motion: no-preference) {
+            .feature-card {
+                animation: fadeInUp 0.6s ease-out;
+            }
+
+            .form-group input:focus,
+            .form-group textarea:focus {
+                animation: glow 0.3s ease-out;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 0 0 rgba(212, 165, 116, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 0 8px rgba(212, 165, 116, 0);
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="container">
             <div class="logo-section">
-                <img src="./photo/logo.png" alt="AYADY BY O" class="logo-img">
-                <div class="logo-text">
-                    <h1>AYADY BY O</h1>
+                <img src="./photos/logo.png" height="80px" class="logo">
+                <div class="logo-text" >
+                    <h1>AYADY&Co</h1>
                     <p>وسائد فاخرة مصنوعة بحب</p>
                 </div>
             </div>
             <nav>
-                <a href="#packages">الباقات</a>
+                <a href="#features">المميزات</a>
                 <a href="#order">اطلب الآن</a>
             </nav>
         </div>
@@ -36,7 +514,7 @@
                 <!-- Text Content -->
                 <div class="hero-text">
                     <h2>أحضر الراحة إلى منزلك</h2>
-                    <p>وسائد فاخرة مصنوعة بحب واهتمام بكل التفاصيل. كل وسادة من AYADY BY O تجمع بين الجودة العالية والتصميم الأنيق لتحويل غرفة نومك إلى ملاذ هادئ.</p>
+                    <p>وسائد فاخرة مصنوعة بحب واهتمام بكل التفاصيل. كل وسادة من AYADY&Co تجمع بين الجودة العالية والتصميم الأنيق لتحويل غرفة نومك إلى ملاذ هادئ.</p>
 
                     <div class="benefits">
                         <div class="benefit-item">
@@ -49,15 +527,20 @@
                         </div>
                         <div class="benefit-item">
                             <span>✓</span>
-                            <span>توصيل مجاني في جميع أنحاء المغرب</span>
+                            <span>توصيل  في جميع أنحاء المغرب</span>
                         </div>
+                    </div>
+
+                    <div class="price-box">
+                        <p>179 درهم</p>
+                        <p>السعر </p>
                     </div>
                 </div>
 
                 <!-- Product Image -->
                 <div class="hero-image">
                     <div class="hero-image-wrapper">
-                        <img src="./photo/p1.png" alt="AYADY BY O Premium Pillow">
+                        <img src="./photos/p1.png">
                     </div>
                 </div>
             </div>
@@ -65,9 +548,9 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
-            <h2>لماذا تختار AYADY BY O؟</h2>
+            <h2>لماذا تختار AYADY&Co؟</h2>
 
             <div class="features-grid">
                 <!-- Feature 1: Comfort -->
@@ -94,150 +577,60 @@
         </div>
     </section>
 
-    <!-- Packages Section -->
-    <section class="packages-section" id="packages">
-        <div class="container">
-            <div class="packages-header">
-                <h2>اختر الباقة المناسبة لك</h2>
-                <p>التوصيل مجاني في جميع أنحاء المغرب</p>
-            </div>
-
-            <div class="packages-grid">
-                <!-- Package 1 -->
-                <div class="package-card" data-package="Pack 1" data-price="179" onclick="selectPackage(this)">
-                    <h3>Pack 1</h3>
-                    <div class="package-price">179 درهم</div>
-                    <p class="package-description">وسادة واحدة</p>
-                    <ul class="package-features">
-                        <li>وسادة واحدة فاخرة</li>
-                        <li>مواد عالية الجودة</li>
-                        <li>توصيل مجاني</li>
-                    </ul>
-                </div>
-
-                <!-- Package 2 -->
-                <div class="package-card" data-package="Pack 2" data-price="299" onclick="selectPackage(this)">
-                    <div class="package-badge">الأكثر مبيعاً</div>
-                    <h3>Pack 2</h3>
-                    <div class="package-price">299 درهم</div>
-                    <p class="package-description">وسادتان</p>
-                    <ul class="package-features">
-                        <li>وسادتان فاخرتان</li>
-                        <li>مواد عالية الجودة</li>
-                        <li>توصيل مجاني</li>
-                    </ul>
-                </div>
-
-                <!-- Package 3 -->
-                <div class="package-card" data-package="Pack 3" data-price="399" onclick="selectPackage(this)">
-                    <h3>Pack 3</h3>
-                    <div class="package-price">399 درهم</div>
-                    <p class="package-description">ثلاث وسائد</p>
-                    <ul class="package-features">
-                        <li>ثلاث وسائد فاخرة</li>
-                        <li>مواد عالية الجودة</li>
-                        <li>توصيل مجاني</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Order Form Section -->
     <section class="order-section" id="order">
         <div class="order-container">
             <div class="order-header">
-                <h2>أكمل طلبك الآن</h2>
-                <p>ملء النموذج أدناه لإتمام طلبك</p>
+                <h2>اطلب وسادتك الآن</h2>
+                <p>ملء النموذج أدناه وسنتواصل معك عبر الواتس آب لتأكيد طلبك</p>
             </div>
 
             <div class="form-wrapper">
-                <div class="selected-package" id="selectedPackageDisplay" style="display: none;">
-                    <p>الباقة المختارة:</p>
-                    <div class="package-name" id="packageName"></div>
-                </div>
-
                 <form id="orderForm">
-                    <!-- Package Selection (Hidden) -->
-                    <input type="hidden" id="packageInput" name="package" value="">
-                    <input type="hidden" id="priceInput" name="price" value="">
-
                     <!-- Name Input -->
                     <div class="form-group">
-                        <label for="name">
-                            اسمك الكامل
-                            <span class="required">*</span>
-                        </label>
+                        <label for="name">اسمك الكامل</label>
                         <input type="text" id="name" name="name" placeholder="أدخل اسمك" required>
-                        <div class="form-error">الاسم مطلوب</div>
                     </div>
 
-                    <!-- Email Input (Optional) -->
+                    <!-- Email Input -->
                     <div class="form-group">
-                        <label for="email">
-                            البريد الإلكتروني
-                            <span class="optional">(اختياري)</span>
-                        </label>
-                        <input type="email" id="email" name="email" placeholder="example@email.com">
-                        <div class="form-error">البريد الإلكتروني غير صحيح</div>
+                        <label for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" name="email" placeholder="example@email.com" required>
                     </div>
 
                     <!-- Phone Input -->
                     <div class="form-group">
-                        <label for="phone">
-                            رقم الهاتف
-                            <span class="required">*</span>
-                        </label>
+                        <label for="phone">رقم الهاتف</label>
                         <input type="tel" id="phone" name="phone" placeholder="06XXXXXXXX" required>
-                        <div class="form-error">رقم الهاتف يجب أن يكون 10 أرقام (06XXXXXXXX)</div>
                     </div>
 
                     <!-- Neighborhood Input -->
                     <div class="form-group">
-                        <label for="neighborhood">
-                            الحي / السكن
-                            <span class="required">*</span>
-                        </label>
+                        <label for="neighborhood">الحي / السكن</label>
                         <input type="text" id="neighborhood" name="neighborhood" placeholder="مثال: حي الرياض" required>
-                        <div class="form-error">الحي مطلوب</div>
                     </div>
 
                     <!-- City Input -->
                     <div class="form-group">
-                        <label for="city">
-                            المدينة
-                            <span class="required">*</span>
-                        </label>
+                        <label for="city">المدينة</label>
                         <input type="text" id="city" name="city" placeholder="مثال: الدار البيضاء" required>
-                        <div class="form-error">المدينة مطلوبة</div>
                     </div>
 
                     <!-- Message Textarea -->
                     <div class="form-group">
-                        <label for="message">
-                            ملاحظاتك
-                            <span class="optional">(اختياري)</span>
-                        </label>
+                        <label for="message">ملاحظاتك (اختياري)</label>
                         <textarea id="message" name="message" placeholder="أضف أي ملاحظات أو استفسارات..."></textarea>
                     </div>
 
                     <!-- Submit Button -->
                     <button type="submit" class="submit-btn">إرسال الطلب</button>
 
+                    
                 </form>
             </div>
         </div>
     </section>
-
-    <!-- Confirmation Modal -->
-    <div class="modal" id="confirmationModal">
-        <div class="modal-content">
-            <div class="modal-icon">✓</div>
-            <h2>تم استقبال طلبك بنجاح!</h2>
-            <p>شكراً لك على طلبك. سيتم التواصل معك قريباً عبر الواتس آب على الرقم المسجل للتأكيد والتفاصيل النهائية.</p>
-            <button class="modal-button" onclick="closeModal()">حسناً</button>
-        </div>
-    </div>
 
     <!-- Info Section -->
     <section class="info-section">
@@ -245,7 +638,7 @@
             <div class="info-grid">
                 <div class="info-item">
                     <h4>اتصل بنا</h4>
-                    <p>0644223229</p>
+                    <p>0644-223229</p>
                 </div>
                 <div class="info-item">
                     <h4>التوصيل</h4>
@@ -262,10 +655,89 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2026 AYADY BY O. جميع الحقوق محفوظة. وسائد فاخرة مصنوعة بحب.</p>
+            <p>© 2026 AYADY&Co. جميع الحقوق محفوظة. وسائد فاخرة مصنوعة بحب.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        // Form submission handler
+        const orderForm = document.getElementById('orderForm');
+        
+        orderForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const neighborhood = document.getElementById('neighborhood').value;
+            const city = document.getElementById('city').value;
+            const message = document.getElementById('message').value;
+
+            // Create WhatsApp message
+            const whatsappNumber = '212644223229';
+            const whatsappMessage = `السلام عليكم،\n\nاسمي: ${name}\nالبريد الإلكتروني: ${email}\nرقم الهاتف: ${phone}\nالحي/السكن: ${neighborhood}\nالمدينة: ${city}\n\nرسالتي:\n${message}\n\nأود طلب وسادة AYADY&Co بسعر 179 درهم مع التوصيل في جميع أنحاء المغرب.`;
+
+            // Encode message for URL
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            fetch("https://script.google.com/macros/s/AKfycbyQNiU1TMJPYmPZrqYKS_Rf11AALDeHQEoZTucf7Pn0B4yIlI2OTFdhjslRAjWbq7L5/exec", {
+    method: "POST",
+    body: JSON.stringify({
+        name: name,
+        email: email,
+        phone: phone,
+        address: neighborhood,
+        city: city,
+        notes: message
+    }),
+    mode: "no-cors"
+})
+.then(() => {
+    window.open(whatsappUrl, '_blank');
+    orderForm.reset();
+})
+.catch(err => {
+    console.error(err);
+});
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add animation to feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
